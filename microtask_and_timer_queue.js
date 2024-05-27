@@ -27,6 +27,7 @@ Promise.resolve().then(() => console.log("Promise 1"));
 Promise.resolve().then(() => {
   console.log("Promise 2");
   process.nextTick(() => console.log("Promise 2 nextTick"));
+  Promise.resolve().then(() => console.log("Promise 2 promise"));
 });
 Promise.resolve().then(() => console.log("Promise 3"));
 
@@ -109,13 +110,23 @@ STATUS:
 
 STATUS: 
 - Microtask nextTick queue: [Promise 2 nextTick]
-- Microtask Others queue: [Promise 3]
+- Microtask Others queue: [Promise 3, Promise 2 promise]
 - Timers queue: [setTimeout 1, setTimeout 2, setTiemout 3]
 - I/O queue: []
 - Check Immediate queue: []
 - Close queue: []
 
 // Output: Promise 3
+
+STATUS: 
+- Microtask nextTick queue: [Promise 2 nextTick]
+- Microtask Others queue: [Promise 2 promise]
+- Timers queue: [setTimeout 1, setTimeout 2, setTiemout 3]
+- I/O queue: []
+- Check Immediate queue: []
+- Close queue: []
+
+// Output: Promise 2 promise
 
 STATUS: 
 - Microtask nextTick queue: [Promise 2 nextTick]
@@ -262,6 +273,7 @@ nextTick 2 nextTick
 Promise 1
 Promise 2
 Promise 3
+Promise 2 promise
 Promise 2 nextTick
 setTimeout 1
 setTimeout 1 nextTick first

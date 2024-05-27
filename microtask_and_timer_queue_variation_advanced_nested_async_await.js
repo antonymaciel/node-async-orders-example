@@ -51,8 +51,8 @@ STATUS:
 // miscrotask enqueued: async1
 
 STATUS: 
-- Microtask nextTick queue: [async1] // Pending to resolve async2
-- Microtask Others queue: []
+- Microtask nextTick queue: []
+- Microtask Others queue: [async1] // Pending to resolve async2
 - Timers queue: []
 - I/O queue: []
 - Check Immediate queue: []
@@ -65,8 +65,8 @@ STATUS:
 // miscrotask enqueued: async2
 
 STATUS: 
-- Microtask nextTick queue: [async2]
-- Microtask Others queue: []
+- Microtask nextTick queue: []
+- Microtask Others queue: [async2]
 - Timers queue: []
 - I/O queue: []
 - Check Immediate queue: []
