@@ -1,5 +1,10 @@
 setTimeout(() => console.log("setTimeout 1"), 0);
-setTimeout(() => console.log("setTimeout 2"), 0);
+setTimeout(() => {
+  console.log("setTimeout 2");
+  process.nextTick(() =>
+    console.log("nextTick inside setTimeout 2")
+  );
+}, 0);
 setTimeout(() => console.log("setTimeout 3"), 0);
 
 process.nextTick(() => console.log("nextTick 1"));
@@ -143,6 +148,19 @@ STATUS:
 - Close queue: []
 
 // Output: setTimeout 2
+// microstasks enqueued
+
+STATUS: 
+- Microtask nextTick queue: [nextTick inside setTimeout 2]
+- Microtask Others queue: []
+- Timers queue: [setTimeout 3]
+- I/O queue: []
+- Check Immediate queue: []
+- Close queue: []
+
+----------------------Loop 1 - Timer phase / Microtasks: Next ticks ----------------------
+
+// Output: nextTick inside setTimeout 2
 
 STATUS: 
 - Microtask nextTick queue: []
@@ -151,6 +169,8 @@ STATUS:
 - I/O queue: []
 - Check Immediate queue: []
 - Close queue: []
+
+----------------------Loop 1 - Timer phase: resume ----------------------
 
 // Output: setTimeout 3
 
@@ -180,5 +200,6 @@ Promise 3
 nextTick inside Promise 2
 setTimeout 1
 setTimeout 2
+nextTick inside setTimeout 2
 setTimeout 3
 */
