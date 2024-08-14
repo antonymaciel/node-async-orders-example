@@ -1,23 +1,28 @@
 // CODE
-for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forLoop');} } // to avoid ambiguity with the timers
+for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forLoop');} } // to avoid ambiguity
 
 
 /*
 ----------------------Loop 1 - Start ----------------------
 
-// [Timer] finished
-// [I/O Task] finished
-// [Inmmediate] finished
-// [Close] finished
+// Timer [Timer] starts
+// I/O [I/O Task] starts
+// Immmediate [Inmmediate] starts
+// Evnet [Close] starts
+// Output: forLoop
+// Timer[Timer] finished
+// I/O [I/O Task] finished
+// Immmediate [Inmmediate] finished
+// Event [Close] finished
 // microstasks enqueued
 
 STATUS: 
 - Microtask nextTick queue: []
 - Microtask Others queue: []
-- Timers queue: [] // Pending to finish [timer name]
-- I/O queue: [] // Pending to finish [i/o name]
-- Check Immediate queue: [] // Pending to finsih [inmmediate name]
-- Close queue: [] // Pending to finish [close event name]
+- Timers queue: [] // Pending to finish Timer [timer name]
+- I/O queue: [] // Pending to finish I/O [i/o name]
+- Check Immediate queue: [] // Pending to finsih Immediate [immmediate name]
+- Close queue: [] // Pending to close Event [close event name]
 
 ----------------------Loop 1 - Timer phase: start ----------------------
 
@@ -26,10 +31,10 @@ STATUS:
 STATUS: 
 - Microtask nextTick queue: []
 - Microtask Others queue: []
-- Timers queue: [] // Pending to finish [timer name]
-- I/O queue: [] // Pending to finish [i/o name]
-- Check Immediate queue: [] // Pending to finsih [inmmediate name]
-- Close queue: [] // Pending to finish [close event name]
+- Timers queue: [] // Pending to finish Timer [timer name]
+- I/O queue: [] // Pending to finish I/O [i/o name]
+- Check Immediate queue: [] // Pending to finsih Immediate [immmediate name]
+- Close queue: [] // Pending to close Event [close event name]
 
 ----------------------Loop 1 - Timer phase / Microtasks: Next ticks ----------------------
 ----------------------Loop 1 - Timer phase / Microtasks: Others ----------------------
@@ -54,4 +59,5 @@ STATUS:
 
 // Output summary
 /*
+forLoop
 */

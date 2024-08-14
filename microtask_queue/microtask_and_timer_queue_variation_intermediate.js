@@ -21,7 +21,7 @@ new Promise(function (resolve, reject) {
   }, 0);
 });
 
-for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forLoop');} } // to avoid ambiguity with the timers
+for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forLoop');} } // to avoid ambiguity
 
 
 /*
@@ -33,8 +33,8 @@ for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forL
 // Output: Promise 2 - start 
 // setTimeout 2 starts counting
 // Output: forLoop
-// setTimeout 1 finished
-// setTimeout 2 finished
+// Timer setTimeout 1 finished
+// Timer setTimeout 2 finished
 
 STATUS: 
 - Microtask nextTick queue: []
@@ -90,7 +90,7 @@ STATUS:
 STATUS: 
 - Microtask nextTick queue: []
 - Microtask Others queue: []
-- Timers queue: [] // Pending to finish setTimeout 3
+- Timers queue: [] // Pending to finish Timer setTimeout 3
 - I/O queue: []
 - Check Immediate queue: []
 - Close queue: []
@@ -101,7 +101,7 @@ STATUS:
 
 ----------------------Loop 2 - Start ----------------------
 
-// setTimeout 3 finished
+// Timer setTimeout 3 finished
 
 STATUS:
 - Microtask nextTick queue: []

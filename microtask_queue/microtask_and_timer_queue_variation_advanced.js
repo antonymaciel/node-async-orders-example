@@ -29,7 +29,7 @@ new Promise(function (resolve) {
 
 console.log("script end");
 
-for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forLoop');} } // to avoid ambiguity with the timers
+for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forLoop');} } // to avoid ambiguity
 
 
 
@@ -50,7 +50,7 @@ for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forL
 // microtask enqueued: promise1
 // Output: script end
 // Output: forLoop
-// setTimeout finished
+// Timer setTimeout finished
 
 STATUS: 
 - Microtask nextTick queue: [async1, promise1]

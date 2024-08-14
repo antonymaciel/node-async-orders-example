@@ -8,7 +8,7 @@ Promise.resolve().then(() => console.log("Promise"));
 setTimeout(() => console.log("setTimeout"), 0);
 setImmediate(() => console.log("setImmediate"));
 
-for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forLoop');} }  // to avoid ambiguity with the timers
+for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forLoop');} } // to avoid ambiguity
 
 
 /*
@@ -16,14 +16,14 @@ for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forL
 // microstasks enqueued
 // setImmediate enqueued
 // Output: forLoop
-// setTimeout finished 
+// Timer setTimeout finished 
 
 
 STATUS: 
 - Microtask nextTick queue: [nextTick]
 - Microtask Others queue: [Promise]
 - Timers queue: [setTimeout]
-- I/O queue: [] // Pending to finish readFile
+- I/O queue: [] // Pending to finish I/O readFile
 - Check Immediate queue: [setImmediate]
 - Close queue: []
 
@@ -36,7 +36,7 @@ STATUS:
 - Microtask nextTick queue: []
 - Microtask Others queue: [Promise]
 - Timers queue: [setTimeout]
-- I/O queue: [] // Pending to finish readFile
+- I/O queue: [] // Pending to finish I/O readFile
 - Check Immediate queue: [setImmediate]
 - Close queue: []
 
@@ -50,7 +50,7 @@ STATUS:
 - Microtask nextTick queue: []
 - Microtask Others queue: []
 - Timers queue: [setTimeout]
-- I/O queue: [] // Pending to finish readFile
+- I/O queue: [] // Pending to finish I/O readFile
 - Check Immediate queue: [setImmediate]
 - Close queue: []
 
@@ -62,7 +62,7 @@ STATUS:
 - Microtask nextTick queue: []
 - Microtask Others queue: []
 - Timers queue: []
-- I/O queue: [] // Pending to finish readFile
+- I/O queue: [] // Pending to finish I/O readFile
 - Check Immediate queue: [setImmediate]
 - Close queue: []
 
@@ -75,14 +75,14 @@ STATUS:
 - Microtask nextTick queue: []
 - Microtask Others queue: []
 - Timers queue: []
-- I/O queue: [] // Pending to finish readFile
+- I/O queue: [] // Pending to finish I/O readFile
 - Check Immediate queue: []
 - Close queue: []
 
 ----------------------Loop 1 - Close phase ----------------------
 
 ----------------------Loop 2 - Start ----------------------
-// readFile finished 
+// I/O readFile finished 
 
 STATUS: 
 - Microtask nextTick queue: []

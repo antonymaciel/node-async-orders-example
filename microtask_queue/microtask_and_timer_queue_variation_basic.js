@@ -11,7 +11,7 @@ Promise.resolve()
   .then(function () {
     console.log("Promise - second handler");
   });
-for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forLoop');} } // to avoid ambiguity with the timers
+for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forLoop');} } // to avoid ambiguity
 
 
 /*
@@ -19,7 +19,7 @@ for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forL
 
 // Output: console
 // Output: forLoop
-// setTimeout finished
+// Timer setTimeout finished
 // microstasks enqueued
 
 STATUS: 

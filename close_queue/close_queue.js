@@ -11,7 +11,7 @@ setTimeout(() => console.log("setTimeout"), 0);
 Promise.resolve().then(() => console.log("Promise"));
 process.nextTick(() => console.log("nextTick"));
 
-for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forLoop');} }  // to avoid ambiguity with the timers
+for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forLoop');} } // to avoid ambiguity
 
 /*
 ----------------------Loop 1 - Start ----------------------
@@ -19,8 +19,8 @@ for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forL
 // setImmediate enqueued
 // microstasks enqueued
 // Output: forLoop
-// setTimeout finished
-// readableStream event closed
+// Timer setTimeout finished
+// Event readableStream closed
 
 STATUS: 
 - Microtask nextTick queue: [nextTick]

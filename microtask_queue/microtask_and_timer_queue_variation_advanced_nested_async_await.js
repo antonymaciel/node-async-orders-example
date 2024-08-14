@@ -21,7 +21,7 @@ const  async2 = async () => {
 
 async2();
 
-for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forLoop');} } // to avoid ambiguity with the timers
+for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forLoop');} } // to avoid ambiguity
 
 
 /*
@@ -34,7 +34,7 @@ for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forL
 // Output: promise start
 // setTimeout starts counting
 // Output: forLoop
-// setTimeout finished
+// Timer setTimeout finished
 
 STATUS: 
 - Microtask nextTick queue: []

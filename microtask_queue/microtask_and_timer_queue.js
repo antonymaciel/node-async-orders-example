@@ -31,13 +31,13 @@ Promise.resolve().then(() => {
 });
 Promise.resolve().then(() => console.log("Promise 3"));
 
-for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forLoop');} } // to avoid ambiguity with the timers
+for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forLoop');} } // to avoid ambiguity
 
 /*
 ----------------------Loop 1 - Start ----------------------
 // microstasks enqueued
 // Output: forLoop
-// setTimeout 1, setTimeout 2 and setTiemout 3 finished 
+// Timers setTimeout 1, setTimeout 2 and setTiemout 3 finished 
 
 STATUS: 
 - Microtask nextTick queue: [nextTick 1, nextTick 2, nextTick 3]

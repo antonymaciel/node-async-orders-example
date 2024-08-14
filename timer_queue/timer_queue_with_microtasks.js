@@ -31,11 +31,12 @@ for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forL
 /*
 ----------------------Loop 1 - Start ----------------------
 
-// setTimeouts starts counting
+// Output: forLoop
+// Timer setTimeouts starts
 // microstasks enqueued
-// setTimeout 1 finished
-// setTimeout 2 finished
-// setTimeout 3 finished
+// Timer setTimeout 1 finished
+// Timer setTimeout 2 finished
+// Timer setTimeout 3 finished
 
 STATUS: 
 - Microtask nextTick queue: [nextTick 1, nextTick 2, nextTick 3]

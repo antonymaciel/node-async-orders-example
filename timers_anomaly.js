@@ -9,7 +9,7 @@ setImmediate(() => console.log("setImmediate"));
 /*
 ----------------------Loop 1 - Start ----------------------
 
-// setTimeout finished
+// Timer setTimeout finished
 // setImmediate enqueued
 // microstasks enqueued
 
@@ -68,7 +68,7 @@ setImmediate
 STATUS: 
 - Microtask nextTick queue: []
 - Microtask Others queue: []
-- Timers queue: [] // Pending to finish setTimeout
+- Timers queue: [] // Pending to finish Timer setTimeout
 - I/O queue: [] 
 - Check Immediate queue: [setImmediate] 
 - Close queue: [] 
@@ -89,7 +89,7 @@ STATUS:
 ----------------------Loop 1 - Close phase ----------------------
 
 ----------------------Loop 2 - Start ----------------------
-// setTimeout finished 
+// Timer setTimeout finished 
 
 STATUS: 
 - Microtask nextTick queue: []

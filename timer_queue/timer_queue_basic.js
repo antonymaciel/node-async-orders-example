@@ -3,13 +3,13 @@ setTimeout(() => console.log("setTimeout 1"), 1000);
 setTimeout(() => console.log("setTimeout 2"), 500);
 setTimeout(() => console.log("setTimeout 3"), 0);
 
-for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forLoop');} } // to avoid ambiguity with the timers
+for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forLoop');} } // to avoid ambiguity
 
 /*
 ----------------------Loop 1 - Start ----------------------
 
 // Output: forLoop
-// setTimeout 3, setTimeout 2 and setTiemout 1 finished 
+// Timers setTimeout 3, setTimeout 2 and setTiemout 1 finished 
 
 STATUS: 
 - Microtask nextTick queue: []
