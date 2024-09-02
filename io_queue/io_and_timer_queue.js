@@ -18,7 +18,7 @@ STATUS:
 - Microtask nextTick queue: []
 - Microtask Others queue: []
 - Timers queue: [setTimeout]
-- I/O queue: [readFile]
+- I/O queue: [] // Pending to poll I/O readFile
 - Check Immediate queue: []
 - Close queue: []
 
@@ -30,11 +30,24 @@ STATUS:
 - Microtask nextTick queue: []
 - Microtask Others queue: []
 - Timers queue: []
-- I/O queue: [readFile]
+- I/O queue: [] // Pending to poll I/O readFile
 - Check Immediate queue: []
 - Close queue: []
 
-----------------------Loop 1  - I/O phase ----------------------
+----------------------Loop 1  - I/O phase: pending ----------------------
+----------------------Loop 1  - I/O phase: poll ----------------------
+
+// Poll I/O readFile and enqueue it
+
+STATUS: 
+- Microtask nextTick queue: []
+- Microtask Others queue: []
+- Timers queue: []
+- I/O queue: [readFile] 
+- Check Immediate queue: []
+- Close queue: []
+
+// No callbacks in other queues, execute I/O enqueued tasks
 
 // Output: readFile
 

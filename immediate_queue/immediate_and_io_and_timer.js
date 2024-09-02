@@ -16,14 +16,14 @@ for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forL
 // microstasks enqueued
 // setImmediate enqueued
 // Output: forLoop
-// Timer setTimeout finished 
+// Timer setTimeout and I/O readFile finished 
 
 
 STATUS: 
 - Microtask nextTick queue: [nextTick]
 - Microtask Others queue: [Promise]
 - Timers queue: [setTimeout]
-- I/O queue: [] // Pending to finish I/O readFile
+- I/O queue: [] // Pending to poll I/O readFile
 - Check Immediate queue: [setImmediate]
 - Close queue: []
 
@@ -36,7 +36,7 @@ STATUS:
 - Microtask nextTick queue: []
 - Microtask Others queue: [Promise]
 - Timers queue: [setTimeout]
-- I/O queue: [] // Pending to finish I/O readFile
+- I/O queue: [] // Pending to poll I/O readFile
 - Check Immediate queue: [setImmediate]
 - Close queue: []
 
@@ -50,7 +50,7 @@ STATUS:
 - Microtask nextTick queue: []
 - Microtask Others queue: []
 - Timers queue: [setTimeout]
-- I/O queue: [] // Pending to finish I/O readFile
+- I/O queue: [] // Pending to poll I/O readFile
 - Check Immediate queue: [setImmediate]
 - Close queue: []
 
@@ -62,27 +62,28 @@ STATUS:
 - Microtask nextTick queue: []
 - Microtask Others queue: []
 - Timers queue: []
-- I/O queue: [] // Pending to finish I/O readFile
+- I/O queue: [] // Pending to poll I/O readFile
 - Check Immediate queue: [setImmediate]
 - Close queue: []
 
-----------------------Loop 1 - I/O phase ----------------------
-----------------------Loop 1 - Check Immediate phase ----------------------
+----------------------Loop 1 - I/O phase: pending ----------------------
+----------------------Loop 1 - I/O phase: pool ----------------------
 
-// Output: setImmediate
+// Poll I/O readFile and enqueue it
 
 STATUS: 
 - Microtask nextTick queue: []
 - Microtask Others queue: []
 - Timers queue: []
-- I/O queue: [] // Pending to finish I/O readFile
-- Check Immediate queue: []
+- I/O queue: [readFile]
+- Check Immediate queue: [setImmediate]
 - Close queue: []
 
-----------------------Loop 1 - Close phase ----------------------
+// There are callbacks in other queues, continues to next phase
 
-----------------------Loop 2 - Start ----------------------
-// I/O readFile finished 
+----------------------Loop 1 - Check Immediate phase ----------------------
+
+// Output: setImmediate
 
 STATUS: 
 - Microtask nextTick queue: []
@@ -92,8 +93,11 @@ STATUS:
 - Check Immediate queue: []
 - Close queue: []
 
+----------------------Loop 1 - Close phase ----------------------
+
+----------------------Loop 2 - Start ----------------------
 ----------------------Loop 2 - Timer phase ----------------------
-----------------------Loop 2 - I/O phase ----------------------
+----------------------Loop 2 - I/O phase: pending ----------------------
 
 // Output: readFile
 

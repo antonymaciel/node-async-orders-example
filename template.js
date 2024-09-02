@@ -20,8 +20,8 @@ STATUS:
 - Microtask nextTick queue: []
 - Microtask Others queue: []
 - Timers queue: [] // Pending to finish Timer [timer name]
-- I/O queue: [] // Pending to finish I/O [i/o name]
-- Check Immediate queue: [] // Pending to finsih Immediate [immmediate name]
+- I/O queue: [] // Pending to finish or poll I/O [i/o name]
+- Check Immediate queue: [] // Pending to finish Immediate [immmediate name]
 - Close queue: [] // Pending to close Event [close event name]
 
 ----------------------Loop 1 - Timer phase: start ----------------------
@@ -32,14 +32,20 @@ STATUS:
 - Microtask nextTick queue: []
 - Microtask Others queue: []
 - Timers queue: [] // Pending to finish Timer [timer name]
-- I/O queue: [] // Pending to finish I/O [i/o name]
+- I/O queue: [] // Pending to finish or poll I/O [i/o name]
 - Check Immediate queue: [] // Pending to finsih Immediate [immmediate name]
 - Close queue: [] // Pending to close Event [close event name]
 
 ----------------------Loop 1 - Timer phase / Microtasks: Next ticks ----------------------
 ----------------------Loop 1 - Timer phase / Microtasks: Others ----------------------
 ----------------------Loop 1 - Timer phase / Microtasks: Next ticks ----------------------
-----------------------Loop 1 - I/O phase ----------------------
+----------------------Loop 1  - I/O phase: pending ----------------------
+----------------------Loop 1  - I/O phase: poll ----------------------
+
+// Poll I/O [i/o name] and enqueue it
+// No callbacks in other queues, execute I/O enqueued tasks
+// There are callbacks in other queues, continues to next phase
+
 ----------------------Loop 1 - Check Immediate phase ----------------------
 ----------------------Loop 1 - Close phase ----------------------
 
