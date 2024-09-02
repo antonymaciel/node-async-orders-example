@@ -1,7 +1,9 @@
 const fs = require("fs");
 
 setTimeout(() => console.log("setTimeout"), 0);
-fs.readFile(__dirname + '/template.js', () => console.log("readFile"));
+fs.readFile(__filename, () => {
+  console.log("readFile");
+});
 
 for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forLoop');} } // to avoid ambiguity
 
