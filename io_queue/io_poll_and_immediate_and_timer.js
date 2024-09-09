@@ -14,7 +14,7 @@ for (let i = 0; i <= 1000000000; i++) { if (i === 1000000000) {console.log('forL
 /*
 ----------------------Loop 1 - Start ----------------------
 // microstasks enqueued
-// setImmediate enqueued
+// Immmediate setImmediate enqueued
 // Output: forLoop
 // Timer setTimeout and I/O readFile finished 
 
@@ -67,7 +67,7 @@ STATUS:
 - Close queue: []
 
 ----------------------Loop 1 - I/O phase: pending ----------------------
-----------------------Loop 1 - I/O phase: pool ----------------------
+----------------------Loop 1 - I/O phase: poll ----------------------
 
 // Poll I/O readFile and enqueue it
 

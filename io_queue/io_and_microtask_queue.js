@@ -51,7 +51,7 @@ STATUS:
 - Close queue: []
 
 ----------------------Loop 1 - I/O phase: pending ----------------------
-----------------------Loop 1 - I/O phase: pool ----------------------
+----------------------Loop 1 - I/O phase: poll ----------------------
 
 // Poll I/O readFile and enqueue it
 
