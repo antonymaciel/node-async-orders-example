@@ -94,15 +94,14 @@ STATUS:
 // Output: Promise 1
 
 STATUS: 
-- Microtask nextTick queue: [nextTick 1]
-- Microtask Others queue: [Promise 1]
+- Microtask nextTick queue: []
+- Microtask Others queue: []
 - Timers queue: []
 - I/O queue: [readFile 2]
 - Check Immediate queue: []
 - Close queue: []
 
-
-// No callbacks in other queues, execute readFile 2 enqueued task
+----------------------Loop 1 - I/O phase: pending - resumme ----------------------
 
 // Output: readFile 2
 // microtasks enqueued
